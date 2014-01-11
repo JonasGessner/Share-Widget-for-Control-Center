@@ -1,7 +1,7 @@
 Package: de.j-gessner.sharewidgetforcontrolcenter
 Name: Share Widget for Control Center
-Depends: ccloader, firmware (>= 7.0)
-Version: 1.0
+Depends: de.j-gessner.ccloader, firmware (>= 7.0)
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: An awesome Control Center plugin!
 Maintainer: Jonas Gessner

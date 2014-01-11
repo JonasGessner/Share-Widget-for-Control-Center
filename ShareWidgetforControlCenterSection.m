@@ -32,7 +32,7 @@
 }
 
 - (CGFloat)sectionHeight {
-    return 50.0f;
+    return 45.0f;
 }
 
 - (void)loadView {
@@ -40,6 +40,9 @@
     
     [self.view.facebookButton addTarget:self action:@selector(shareToFacebook) forControlEvents:UIControlEventTouchUpInside];
     [self.view.twitterButton addTarget:self action:@selector(shareToTwitter) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view.twitterButton setImage:[UIImage imageWithContentsOfFile:[self.bundle pathForResource:@"TwitterIcon" ofType:@"png"]] forState:UIControlStateNormal];
+    [self.view.facebookButton setImage:[UIImage imageWithContentsOfFile:[self.bundle pathForResource:@"FacebookIcon" ofType:@"png"]] forState:UIControlStateNormal];
 }
 
 - (void)shareToTwitter {
