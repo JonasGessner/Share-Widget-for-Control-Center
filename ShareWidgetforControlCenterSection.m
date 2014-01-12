@@ -65,16 +65,4 @@
     return _view;
 }
 
-- (void)dealloc {
-    
-}
-
-- (void)controlCenterWillAppear {
-    
-}
-
-- (void)controlCenterDidDisappear {
-    
-}
-
 @end
