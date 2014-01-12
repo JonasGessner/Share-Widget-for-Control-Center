@@ -25,7 +25,7 @@
         if (facebook) {
             _facebookButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [_facebookButton setTitle:@"Facebook" forState:UIControlStateNormal];
-            [_facebookButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:0.8f] forState:UIControlStateNormal];
+            [_facebookButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:0.7f] forState:UIControlStateNormal];
             _facebookButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
             
             UIGraphicsBeginImageContextWithOptions((CGSize){1.0f, 1.0f}, NO, 0.0f);
@@ -46,7 +46,7 @@
         if (twitter) {
             _twitterButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [_twitterButton setTitle:@"Twitter" forState:UIControlStateNormal];
-            [_twitterButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:0.8f] forState:UIControlStateNormal];
+            [_twitterButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:0.7f] forState:UIControlStateNormal];
             _twitterButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
             
             UIGraphicsBeginImageContextWithOptions((CGSize){1.0f, 1.0f}, NO, 0.0f);
@@ -66,13 +66,13 @@
         
         if (facebook && twitter) {
             _separator = [[UIView alloc] init];
-            _separator.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
+            _separator.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
             
             [self addSubview:_separator];
         }
         else if (!facebook && !twitter) {
             _unavailableLabel = [[UILabel alloc] init];
-            _unavailableLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.8f];
+            _unavailableLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
             _unavailableLabel.backgroundColor = [UIColor clearColor];
             _unavailableLabel.font = [UIFont systemFontOfSize:14.0f];
             _unavailableLabel.textAlignment = NSTextAlignmentCenter;

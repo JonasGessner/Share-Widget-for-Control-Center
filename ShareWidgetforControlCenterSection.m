@@ -32,7 +32,7 @@
 }
 
 - (CGFloat)sectionHeight {
-    return 45.0f;
+    return 44.0f;
 }
 
 - (void)loadView {
