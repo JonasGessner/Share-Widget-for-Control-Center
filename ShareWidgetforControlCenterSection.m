@@ -12,7 +12,9 @@
 #import "SBControlCenterController.h"
 #import <objc/runtime.h>
 
-@interface ShareWidgetforControlCenterSection ()
+@interface ShareWidgetforControlCenterSection () {
+    SLComposeViewController *_controller;
+}
 
 @property (nonatomic, strong) NSBundle *bundle;
 @property (nonatomic, strong) ShareWidgetforControlCenterSectionView *view;
@@ -45,16 +47,22 @@
     [self.view.facebookButton setImage:[UIImage imageWithContentsOfFile:[self.bundle pathForResource:@"FacebookIcon" ofType:@"png"]] forState:UIControlStateNormal];
 }
 
+- (void)controlCenterDidDisappear {
+    if (_controller.view.superview) {
+        [_controller dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 - (void)shareToTwitter {
-    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    _controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [[objc_getClass("SBControlCenterController") sharedInstance] presentViewController:controller animated:NO completion:nil];
+    [[[objc_getClass("SBControlCenterController") sharedInstance] valueForKey:@"_viewController"] presentViewController:_controller animated:NO completion:nil];
 }
 
 - (void)shareToFacebook {
-    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    _controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [[objc_getClass("SBControlCenterController") sharedInstance] presentViewController:controller animated:NO completion:nil];
+    [[[objc_getClass("SBControlCenterController") sharedInstance] valueForKey:@"_viewController"] presentViewController:_controller animated:NO completion:nil];
 }
 
 - (UIView *)view {
